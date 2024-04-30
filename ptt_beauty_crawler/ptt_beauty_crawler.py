@@ -11,7 +11,7 @@ def download_img(url, save_path):
 
 def main():
   url = 'https://www.ptt.cc/bbs/Beauty/M.1686997472.A.FDA.html'
-  headers = {'Cookie': 'over18=1'}
+  headers = {'Cookie': '_gid=GA1.2.186421156.1714373057; _gat=1; over18=1; _ga_DZ6Y3BY9GW=GS1.1.1714439650.10.1.1714439651.0.0.0; _ga=GA1.1.167492845.1711588536', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'}
 
   response = requests.get(url, headers=headers)
   soup = BeautifulSoup(response.text, 'html.parser')
