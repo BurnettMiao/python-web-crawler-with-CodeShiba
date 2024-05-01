@@ -4,15 +4,13 @@ from bs4 import BeautifulSoup
 def fetch_data(url):
   response = requests.get(url)
   soup = BeautifulSoup(response.text, 'html.parser')
-  movies = soup.find_all('div', class_='poster-info')
+  movies = soup.find_all('section', class_='infoArea')
   for movie in movies:
-    name = movie.find('div', class_='title')
-    name = name.a.text.strip()
-    engName = movie.find('p', class_='show-for-large')
-    engName = engName.text.strip()
-    
+    name = movie.find('a')
+    print(name.text)
+  
 
 
-url = 'https://www.ambassador.com.tw/home/MovieList?Type=1'
+url = 'https://www.vscinemas.com.tw/vsweb/film/index.aspx'
 
 fetch_data(url)
